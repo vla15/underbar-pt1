@@ -17,5 +17,24 @@ describe('every()', () => {
       expect(_.every(nums, num => num % 2 === 1)).toBe(false);
     });
 
+    it('returns true is all values in an object are even', () => {
+      const nums = { 
+        hello: 2, 
+        test: 4, 
+        weird: 6 
+      }
+      expect(_.every(nums, num => num % 2 === 0)).toBe(true);
+    });
+
+    it('should return false since strings are not even numbers', () => {
+      const nums = {
+        hello: 'why there', 
+        ten: 10, 
+        four: 4, 
+        dont: 'stop'
+      }
+      expect(_.every(nums, num => num % 2 === 0)).toBe(false);
+    });
+
   });
 });

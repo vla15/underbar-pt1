@@ -20,4 +20,15 @@ describe('identity()', () => {
     };
     expect(_.identity(val)).toBe(val);
   });
+
+  it('returns NaN if given NaN', () => {
+    const val = NaN;
+    expect(_.identity(val)).toEqual(val);
+  });
+
+  it('returns a string when given a string', () => {
+    const val = 'this is a test';
+    expect(_.identity(val)).toBe(val);
+  });
+
 });

@@ -26,4 +26,14 @@ describe('indexOf()', () => {
     expect(_.indexOf(arr, 'bar', 2)).toBe(3);
   });
 
+  it('starts searching at the given offset and finds the last hello', () => {
+    const arr = ['dang', 'hello', 'this', 'is', 'tough', 'hello'];
+    expect(_.indexOf(arr, 'hello', 2)).toBe(5);
+  });
+
+  it('returns the first matching index of an array of numbers', () => {
+    const arr = [2, 5, 7, 4, 9];
+    expect(_.indexOf(arr, 7)).toBe(2);
+  });
+
 });

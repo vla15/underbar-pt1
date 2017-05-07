@@ -11,4 +11,9 @@ describe('some()', () => {
     expect(_.some(nums, num => num % 2 === 1)).toBe(false);
   });
 
+  it('returns true if any number is even', () => {
+    const nums = [3, 7, 9, 10];
+    expect(_.some(nums, num => num % 2 === 0)).toBe(true);
+  });
+
 });

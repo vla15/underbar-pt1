@@ -31,4 +31,30 @@ describe('contains()', () => {
     expect(_.contains(ponies, 'Applejack')).toBe(false);
   });
 
+  it('returns true if the target value is among the value of an object', () => {
+    const powerRangers = {
+      red: 'jason',
+      black: 'zack',
+      green: 'tommy',
+      yellow: 'trinny',
+      blue: 'billy',
+      pink: 'kimberly'
+    };
+    expect(_.contains(powerRangers, 'tommy')).toBe(true);
+  });
+
+  it('returns false when the target value is an object and is among the values of the original object', () => {
+    const world = {
+      hello: 1,
+      there: 2,
+      much: { 
+        there: true 
+      }
+    };
+    const test = { 
+      there: true 
+    };
+    expect(_.contains(world, test)).toBe(false);
+  });
+
 });

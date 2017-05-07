@@ -13,4 +13,16 @@ describe('reduce()', () => {
     expect(result).toEqual(15);
   });
 
+  it('reduces an array of numbers to a product without an explicit initial value for the accumulator', () => {
+    const arr = [2, 3, 4, 5, 6];
+    const result = _.reduce(arr, (a, b) => a * b);
+    expect(result).toEqual(720);
+  });
+
+  it('reduces an array of an array to a single array with an explicit initial value fro the accumulator', () => {
+    const arr = [[2, 3, 4]];
+    const result = _.reduce(arr, (acc, values) => acc.concat(values), []);
+    expect(result).toEqual([2, 3, 4]);
+  });
+
 });
